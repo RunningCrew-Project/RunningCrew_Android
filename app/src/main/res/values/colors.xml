@@ -11,5 +11,6 @@
 
     <color name="crew_running_btn">#1B6436</color>
     <color name="white">#FBF5F5</color>
+    <color name="black">#090909</color>
 
 </resources>
