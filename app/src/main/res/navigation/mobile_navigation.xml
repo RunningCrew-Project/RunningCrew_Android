@@ -3,23 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_history">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="run.acw.runningcrew.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_history"
+        android:name="run.acw.crew.ui.history.HistoryFragment"
+        tools:layout="@layout/fragment_history" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="run.acw.runningcrew.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_crew"
+        android:name="run.acw.crew.ui.crew.CrewFragment"
+        tools:layout="@layout/fragment_crew" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="run.acw.runningcrew.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:name="run.acw.crew.ui.notifications.NotificationsFragment"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_myPage"
+        android:name="run.acw.crew.ui.myPage.MyPageFragment"
         tools:layout="@layout/fragment_notifications" />
 </navigation>

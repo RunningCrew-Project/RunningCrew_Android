@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">RunningCrew</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_history">러닝기록</string>
+    <string name="title_crew">크루</string>
+    <string name="title_notifications">알림</string>
+    <string name="title_myPage">마이페이지</string>
+
 </resources>

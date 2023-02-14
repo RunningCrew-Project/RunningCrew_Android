@@ -1,4 +1,4 @@
-package run.acw.runningcrew.ui.notifications
+package run.acw.crew.ui.notifications
 
 import android.os.Bundle
 import android.view.LayoutInflater

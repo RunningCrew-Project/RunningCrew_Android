@@ -1,4 +1,4 @@
-package run.acw.runningcrew
+package run.acw.crew
 
 import org.junit.Test
 
