@@ -1,19 +1,16 @@
 package run.acw.crew.ui.history.personal
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.google.android.gms.ads.AdRequest
-import run.acw.crew.ui.history.HistoryViewModel
-import run.acw.runningcrew.databinding.FragmentPersonalPrepareBinding
+import run.acw.runningcrew.databinding.FragmentPersonalRunningBinding
 
-class PersonalPrepareFragment : Fragment() {
+class PersonalRecordFragment : Fragment() {
 
-    private var _binding: FragmentPersonalPrepareBinding? = null
+    private var _binding: FragmentPersonalRunningBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -22,11 +19,12 @@ class PersonalPrepareFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val personalPrepareViewModel =
-            ViewModelProvider(this).get(PersonalPrepareViewModel::class.java)
+            ViewModelProvider(this).get(PersonalRecordViewModel::class.java)
 
-        _binding = FragmentPersonalPrepareBinding.inflate(inflater, container, false)
+        _binding = FragmentPersonalRunningBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        binding.viewModel=personalPrepareViewModel
+
+
 
         return root
     }

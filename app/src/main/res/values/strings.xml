@@ -13,6 +13,12 @@
     <string name="personal_prepare_kilometer">킬로미터</string>
     <string name="personal_prepare_start_btn">시작</string>
 
+    <string name="count_down_description">러닝을 시작합니다</string>
+    <string name="running_record_time">시간</string>
+    <string name="running_record_distance">킬로미터</string>
+    <string name="running_record_pace_now">현재 페이스</string>
+    <string name="running_record_pace_avr">평균 페이스</string>
+
 
     <string name="title_crew">크루</string>
     <string name="title_notifications">알림</string>

@@ -21,7 +21,25 @@
         <fragment
             android:id="@+id/navigation_personal_run"
             android:name="run.acw.crew.ui.history.personal.PersonalPrepareFragment"
-            tools:layout="@layout/fragment_personal_prepare" />
+            tools:layout="@layout/fragment_personal_prepare" >
+            <action
+                android:id="@+id/action_navigation_personal_run_to_navigation_personal_run_count_down"
+                app:destination="@id/navigation_personal_run_count_down" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/navigation_personal_run_count_down"
+            android:name="run.acw.crew.ui.history.personal.CountdownFragment"
+            tools:layout="@layout/fragment_count_down" >
+            <action
+                android:id="@+id/action_navigation_personal_run_count_down_to_navigation_personal_run_record"
+                app:destination="@id/navigation_personal_run_record" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/navigation_personal_run_record"
+            android:name="run.acw.crew.ui.history.personal.PersonalRecordFragment"
+            tools:layout="@layout/fragment_personal_running"/>
     </navigation>
 
 

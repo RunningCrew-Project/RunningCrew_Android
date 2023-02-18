@@ -16,5 +16,6 @@
 
 
     <color name="transparent">#00ffffff</color>
+    <color name="tmp"> #fffbceb1</color>
 
 </resources>
