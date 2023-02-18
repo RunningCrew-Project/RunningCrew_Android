@@ -1,153 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="run.acw.crew.ui.history.HistoryFragment">
+<layout>
 
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        app:adSize="BANNER"
-        app:adUnitId="ca-app-pub-5532574913329982/2319990085"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
+        <variable
+            name="viewModel"
+            type="run.acw.crew.ui.history.HistoryViewModel" />
+    </data>
 
-    <LinearLayout
-        android:id="@+id/history_linear_text"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintVertical_weight="74"
-        android:weightSum="59"
-        android:layout_marginStart="30dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adView"
-        app:layout_constraintBottom_toTopOf="@id/history_linear_button">
+        android:layout_height="match_parent"
+        tools:context="run.acw.crew.ui.history.HistoryFragment">
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            app:adSize="BANNER"
+            app:adUnitId="ca-app-pub-5532574913329982/2319990085"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
+            android:id="@+id/history_linear_text"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="24"
-            >
+            android:layout_marginStart="30dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:weightSum="70"
+            app:layout_constraintBottom_toTopOf="@id/history_linear_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adView"
+            app:layout_constraintVertical_weight="74">
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="#00ffffff"
-                android:src="@drawable/location" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="35">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="#00ffffff"
-                android:text="서울특별시 종로구 성균관로 25-2"
-                android:textColor="@color/black"
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="#00ffffff"
+                    android:src="@drawable/location" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:autoSizeTextType="uniform"
+                    android:background="#00ffffff"
+                    android:fontFamily="@font/notosans_medium"
+                    android:includeFontPadding="false"
+                    android:text="서울특별시 종로구 성균관로 25-2"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="35"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/notosans_bold"
                 android:includeFontPadding="false"
-                android:fontFamily="@font/notosans_medium"
-                android:textSize="16sp" />
+                android:text="@string/history_record"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/history_linear_button"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="30dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:weightSum="569"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/history_linear_text"
+            app:layout_constraintVertical_weight="484">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/history_personal_run_btn"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="24dp"
+                android:layout_weight="224"
+                android:background="@drawable/history_buttons"
+                android:backgroundTint="@color/main_color"
+                android:orientation="vertical"
+                app:onClick="@{viewModel::onPersonalRunningBtnClicked}">
+
+
+
+                <TextView
+                    android:id="@+id/solo_btn_top_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="11dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:includeFontPadding="false"
+                    android:text="@string/history_personal_btn_description"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:fontFamily="@font/notosans_bold"
+                    android:gravity="center"
+                    android:text="@string/history_personal_btn_text"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/solo_btn_top_text" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/history_crew_btn"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="224"
+                android:background="@drawable/history_buttons"
+                android:backgroundTint="@color/crew_running_btn"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/crew_btn_top_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="11dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:includeFontPadding="false"
+                    android:text="@string/history_crew_btn_text"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:fontFamily="@font/notosans_bold"
+                    android:gravity="center"
+                    android:text="@string/history_crew_btn_text"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/crew_btn_top_text" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
         </LinearLayout>
 
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="35"
-            android:text="러닝 기록하기"
-            android:includeFontPadding="false"
-            android:textColor="@color/black"
-            android:textSize="35sp"
-            android:fontFamily="@font/notosans_bold"/>
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
-        android:id="@+id/history_linear_button"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintVertical_weight="484"
-        android:gravity="center_horizontal"
-        android:layout_margin="30dp"
-        android:weightSum="569"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/history_linear_text"
-        >
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="224"
-            android:layout_marginBottom="24dp"
-            android:background="@drawable/history_buttons"
-            android:backgroundTint="@color/main_color"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/solo_btn_top_text"
-                android:layout_width="match_parent"
-                android:layout_height="17dp"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="11dp"
-                android:text="혼자서도 잘 달릴 수 있어요"
-                android:fontFamily="@font/notosans_medium"
-                android:textColor="@color/white"
-                android:textSize="13sp"
-                android:includeFontPadding="false"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:gravity="center"
-                android:text="개인 러닝"
-                android:fontFamily="@font/notosans_bold"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/solo_btn_top_text" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="224"
-            android:background="@drawable/history_buttons"
-            android:backgroundTint="@color/crew_running_btn"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/crew_btn_top_text"
-                android:layout_width="match_parent"
-                android:layout_height="17dp"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="11dp"
-                android:text="크루원들과 함께 러닝"
-                android:fontFamily="@font/notosans_medium"
-                android:includeFontPadding="false"
-                android:textColor="@color/white"
-                android:textSize="13sp"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:gravity="center"
-                android:text="크루 러닝"
-                android:fontFamily="@font/notosans_bold"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/crew_btn_top_text" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    </LinearLayout>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

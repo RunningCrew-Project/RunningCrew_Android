@@ -1,8 +1,25 @@
 <resources>
     <string name="app_name">RunningCrew</string>
     <string name="title_history">러닝기록</string>
+    <string name="history_record">러닝 기록하기</string>
+    <string name="history_personal_btn_description">혼자서도 잘 달릴 수 있어요</string>
+    <string name="history_crew_btn_description">크루원들과 함께 러닝</string>
+    <string name="history_personal_btn_text">개인 러닝</string>
+    <string name="history_crew_btn_text">크루 러닝</string>
+
+
+
+    <string name="title_personal_run">개인 러닝</string>
+    <string name="personal_prepare_kilometer">킬로미터</string>
+    <string name="personal_prepare_start_btn">시작</string>
+
+
     <string name="title_crew">크루</string>
     <string name="title_notifications">알림</string>
     <string name="title_myPage">마이페이지</string>
+
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
