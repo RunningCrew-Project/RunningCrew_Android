@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import run.acw.runningcrew.R
 import run.acw.runningcrew.databinding.FragmentCountDownBinding
 
@@ -45,4 +46,14 @@ class CountdownFragment : Fragment() {
         super.onDestroyView()
         timer.cancel()
     }
+    override fun onResume() {
+        super.onResume()
+        activity?.findViewById<BottomNavigationView>(R.id.nav_view)?.visibility = View.GONE
+    }
+
+    override fun onPause() {
+        super.onPause()
+        activity?.findViewById<BottomNavigationView>(R.id.nav_view)?.visibility = View.VISIBLE
+    }
+
 }
