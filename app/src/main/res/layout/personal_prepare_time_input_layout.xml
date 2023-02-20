@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="descText"
+            type="String" />
+        <variable
+            name="separate"
+            type="String" />
+        <variable
+            name="preValue"
+            type="String" />
+        <variable
+            name="postValue"
+            type="String" />
+    </data>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:hint="@{preValue}"
+                android:inputType="numberDecimal"
+                android:textSize="80sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{separate}"
+                android:hint="."
+                android:textColor="@color/black"
+                android:textSize="80sp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:hint="@{postValue}"
+                android:inputType="numberDecimal"
+                android:textSize="80sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="175dp"
+            android:layout_height="3dp"
+            android:background="@color/black" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+            <ImageButton
+                android:id="@+id/personal_input_layer_prev_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/running_target"
+                android:scaleX="-1"
+                android:background="@color/transparent"/>
+
+            <TextView
+                android:id="@+id/input_kilo_meter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosans_medium"
+                android:text="@{descText}"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"/>
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

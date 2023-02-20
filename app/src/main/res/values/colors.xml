@@ -3,6 +3,7 @@
     <color name="main_color">#25A855</color>
     <color name="main_color_variant">#000000</color>
     <color name="text_color">#191919</color>
+    <color name="snack_bar_color">#FBFEFB</color>
 
 
     <color name="nav_btn_clicked">#25A855</color>
@@ -12,6 +13,7 @@
     <color name="crew_running_btn">#1B6436</color>
     <color name="white">#FBF5F5</color>
     <color name="black">#090909</color>
+    <color name="stop_button_progress_color">#1B6436</color>
 
 
 

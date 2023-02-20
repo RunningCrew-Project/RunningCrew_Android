@@ -7,7 +7,8 @@
             type="run.acw.crew.ui.history.personal.PersonalPrepareViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -22,24 +23,38 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="@color/tmp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/personal_title">
-
             <LinearLayout
-                android:id="@+id/personal_prepare_input_kilo"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="126dp"
+                android:layout_height="0dp"
+                android:background="@color/tmp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/personal_title"
                 android:gravity="center"
                 android:orientation="vertical">
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/personal_prepare_input_layer"
+                    >
+                    <include layout="@layout/personal_prepare_kilo_input_layout"
+                        android:id="@+id/personal_prepare_input_kilo"
+                        app:preValue="@{`5`}"
+                        app:separate="@{`.`}"
+                        app:postValue="@{`00`}"
+                        app:descText="@{@string/personal_prepare_kilometer}"
+                        />
+                    <include layout="@layout/personal_prepare_time_input_layout"
+                        android:id="@+id/personal_prepare_input_time"
+                        app:preValue="@{`00`}"
+                        app:separate="@{`:`}"
+                        app:postValue="@{`30`}"
+                        app:descText="@{@string/personal_prepare_time}"
+                        />
 
-                <include layout="@layout/personal_prepare_input_layout" />
+                </FrameLayout>
+
 
                 <Button
                     android:layout_width="90dp"
@@ -53,8 +68,6 @@
                     app:onClick="@{viewModel::onPersonalRunningStartBtnClicked}" />
             </LinearLayout>
 
-
-        </FrameLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

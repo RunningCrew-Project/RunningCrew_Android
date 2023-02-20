@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_color"
-    android:orientation="vertical"
     android:gravity="center"
-    >
+    android:orientation="vertical">
+
     <TextView
         android:id="@+id/personal_running_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="00:00:00"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/notosans_bold"
         android:includeFontPadding="false"
+        android:text="00:00:00"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="80sp"
-        android:fontFamily="@font/notosans_bold"
-        />
+        android:textSize="80sp" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/notosans_bold"
         android:text="@string/running_record_time"
-        android:textSize="20sp"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:fontFamily="@font/notosans_bold"
-        />
+        android:textSize="20sp" />
 
 
     <TextView
@@ -34,112 +34,131 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="46dp"
-        android:text="00.00"
+        android:fontFamily="@font/notosans_bold"
         android:includeFontPadding="false"
+        android:text="00.00"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="80sp"
-        android:fontFamily="@font/notosans_bold"
-        />
+        android:textSize="80sp" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/notosans_bold"
         android:text="@string/running_record_distance"
-        android:textSize="20sp"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:fontFamily="@font/notosans_bold"
-        />
+        android:textSize="20sp" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:background="@drawable/dotted_line"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"/>
+        android:background="@drawable/dotted_line" />
 
     <LinearLayout
         android:id="@+id/personal_running_paces"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
         android:layout_marginTop="26dp"
-        >
+        android:gravity="center"
+        android:orientation="horizontal">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="00'00''"
-            android:includeFontPadding="false"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="40sp"
-            android:fontFamily="@font/notosans_bold"
             android:layout_marginEnd="37dp"
-            />
+            android:fontFamily="@font/notosans_bold"
+            android:includeFontPadding="false"
+            android:text="00'00''"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="00'00''"
+            android:fontFamily="@font/notosans_bold"
             android:includeFontPadding="false"
+            android:text="00'00''"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="40sp"
-            android:fontFamily="@font/notosans_bold"
-            />
+            android:textSize="40sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center"
-        >
+        android:orientation="horizontal">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/running_record_pace_now"
-            android:includeFontPadding="false"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="17sp"
-            android:fontFamily="@font/notosans_bold"
             android:layout_marginEnd="80dp"
-            />
+            android:fontFamily="@font/notosans_bold"
+            android:includeFontPadding="false"
+            android:text="@string/running_record_pace_now"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/running_record_pace_avr"
+            android:fontFamily="@font/notosans_bold"
             android:includeFontPadding="false"
+            android:text="@string/running_record_pace_avr"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="17sp"
-            android:fontFamily="@font/notosans_bold"
-            />
+            android:textSize="17sp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/personal_running_buttons"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal"
-        android:gravity="center"
+        android:layout_height="120dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:orientation="horizontal"
 
         >
-        <ImageButton
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:background="@drawable/pause_btn"
-            android:layout_marginEnd="50dp"
-            />
 
         <ImageButton
+            android:id="@+id/personal_running_pause_btn"
             android:layout_width="90dp"
             android:layout_height="90dp"
-            android:background="@drawable/stop_btn"
-            />
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/pause_btn" />
+
+        <FrameLayout
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+            <ProgressBar
+                android:id="@+id/personal_running_stop_progress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:progressDrawable="@drawable/circular_progress_bar"
+                android:progress="0"
+                android:indeterminate="false"
+                android:layout_gravity="center"
+                />
+            <ImageButton
+                android:id="@+id/personal_running_stop_btn"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/stop_btn"
+                android:layout_gravity="center"
+                />
+
+        </FrameLayout>
+
+
 
     </LinearLayout>
 
