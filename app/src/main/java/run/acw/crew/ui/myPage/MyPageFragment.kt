@@ -8,44 +8,40 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import run.acw.crew.ui.notifications.NotificationsViewModel
-import run.acw.crew.ui.notifications.tabs.adapter.NotificationTabLayoutAdapter
+import run.acw.crew.ui.myPage.tabs.adapter.MyPageTabAdapter
 import run.acw.runningcrew.databinding.FragmentMyPageBinding
-import run.acw.runningcrew.databinding.FragmentNotificationsBinding
 
 class MyPageFragment : Fragment() {
     private var _binding: FragmentMyPageBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
-    private lateinit var adapter:
+    private lateinit var adapter:MyPageTabAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
+        val myPageViewModel =
+            ViewModelProvider(this).get(MyPageViewModel::class.java)
 
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        _binding = FragmentMyPageBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
 
-        adapter= NotificationTabLayoutAdapter(this)
-        binding.notificationViewPager.adapter=adapter
+        adapter= MyPageTabAdapter(this)
+        binding.myPageViewPager.adapter=adapter
 
         TabLayoutMediator(
-            binding.tabNotification, binding.notificationViewPager
+            binding.tabMyPage, binding.myPageViewPager
         ) { tab: TabLayout.Tab, position: Int ->
             tab.setText(
-                getString(notificationsViewModel.getTabTitle(position))
+                getString(myPageViewModel.getTabTitle(position))
             )
         }.attach()
 
         adapter.apply{
-            setTabs(notificationsViewModel.getTabs())
+            setTabs(myPageViewModel.getTabs())
         }
 
 

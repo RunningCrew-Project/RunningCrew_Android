@@ -38,14 +38,14 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/personal_prepare_input_layer"
                     >
-                    <include layout="@layout/personal_prepare_kilo_input_layout"
+                    <include layout="@layout/layout_personal_prepare_kilo_input"
                         android:id="@+id/personal_prepare_input_kilo"
                         app:preValue="@{`5`}"
                         app:separate="@{`.`}"
                         app:postValue="@{`00`}"
                         app:descText="@{@string/personal_prepare_kilometer}"
                         />
-                    <include layout="@layout/personal_prepare_time_input_layout"
+                    <include layout="@layout/layout_personal_prepare_time_input"
                         android:id="@+id/personal_prepare_input_time"
                         app:preValue="@{`00`}"
                         app:separate="@{`:`}"

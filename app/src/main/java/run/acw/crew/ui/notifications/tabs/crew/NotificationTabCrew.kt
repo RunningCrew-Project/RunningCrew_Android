@@ -10,10 +10,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import run.acw.crew.ui.notifications.tabs.CrewNotificationAdapter
-import run.acw.runningcrew.databinding.NotificationTabCrewBinding
+import run.acw.runningcrew.databinding.TabNotificationCrewBinding
 
 class NotificationTabCrew : Fragment() {
-    private var _binding: NotificationTabCrewBinding? = null
+    private var _binding: TabNotificationCrewBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -24,7 +24,7 @@ class NotificationTabCrew : Fragment() {
         val notificationsViewModel =
             ViewModelProvider(this).get(NotificationTabCrewViewModel::class.java)
 
-        _binding = NotificationTabCrewBinding.inflate(inflater, container, false)
+        _binding = TabNotificationCrewBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
 

@@ -13,11 +13,11 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import run.acw.crew.ui.notifications.tabs.adapter.MyRunningNotificationAdapter
 import run.acw.crew.util.OnMyRunningItemClickedSnackBar
-import run.acw.runningcrew.databinding.NotificationTabMyRunningBinding
+import run.acw.runningcrew.databinding.TabNotificationMyRunningBinding
 
 
 class NotificationTabMyRunning : Fragment() {
-    private var _binding: NotificationTabMyRunningBinding? = null
+    private var _binding: TabNotificationMyRunningBinding? = null
     private val binding get() = _binding!!
     private val myRunningViewModel by lazy {
         ViewModelProvider(this).get(NotificationTabMyRunningViewModel::class.java)
@@ -31,7 +31,7 @@ class NotificationTabMyRunning : Fragment() {
     ): View {
         Log.d(TAG,"onCreateView")
 
-        _binding = NotificationTabMyRunningBinding.inflate(inflater, container, false)
+        _binding = TabNotificationMyRunningBinding.inflate(inflater, container, false)
         val root: View = binding.root
         myRunningViewModel.earlyMsg.observe(viewLifecycleOwner) { msgId ->
          //   snackBar=OnMyRunningItemClickedSnackBar.make(root, getString(msgId))

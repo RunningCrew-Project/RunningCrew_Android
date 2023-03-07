@@ -26,10 +26,14 @@
     <string name="notification_alert_early_time">아직 러닝 시작시간이 아닙니다</string>
 
     <string name="mypage_login_request">로그인하세요</string>
+    <string name="my_page_tab_my_running">마이러닝</string>
+    <string name="my_page_tab_calendar">캘린더</string>
+    <string name="my_page_viewpager_not_login">로그인하면 이용할 수 있습니다</string>
 
     <string name="title_crew">크루</string>
     <string name="title_notifications">알림</string>
     <string name="title_myPage">마이페이지</string>
+
 
 
 

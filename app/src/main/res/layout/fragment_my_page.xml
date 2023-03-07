@@ -68,6 +68,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/notosans_medium"
             android:text="@string/mypage_login_request"
+            android:includeFontPadding="false"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:layout_marginStart="30dp"
@@ -78,7 +79,7 @@
 
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_notification"
+        android:id="@+id/tab_my_page"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@drawable/notification_title_background"
@@ -92,11 +93,11 @@
         app:tabTextColor="@color/black"/>
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/notification_view_pager"
+        android:id="@+id/my_page_view_pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tab_notification" />
+        app:layout_constraintTop_toBottomOf="@id/tab_my_page" />
 </androidx.constraintlayout.widget.ConstraintLayout>

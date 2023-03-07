@@ -2,8 +2,9 @@ package run.acw.crew.ui.myPage.tabs.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import run.acw.crew.ui.notifications.tabs.crew.NotificationTabCrew
-import run.acw.crew.ui.notifications.tabs.myrun.NotificationTabMyRunning
+import run.acw.crew.ui.myPage.tabs.calendar.MyPageCalendarFragment
+import run.acw.crew.ui.myPage.tabs.myrunning.MyPageMyRunningFragment
+
 
 class MyPageTabAdapter (private val fragment: Fragment) :
     FragmentStateAdapter(fragment) {
@@ -21,8 +22,8 @@ class MyPageTabAdapter (private val fragment: Fragment) :
 
     fun setTabs(tabs: List<Int>) {
         this.tabs = tabs
-        addFragment(NotificationTabCrew())
-        addFragment(NotificationTabMyRunning())
+        addFragment(MyPageCalendarFragment())
+        addFragment(MyPageMyRunningFragment())
     }
 
     fun addFragment(fragment: Fragment) {
