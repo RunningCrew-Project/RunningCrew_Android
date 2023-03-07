@@ -4,10 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
+import run.acw.crew.ui.notifications.tabs.adapter.NotificationTabLayoutAdapter
 import run.acw.runningcrew.databinding.FragmentNotificationsBinding
+
 
 class NotificationsFragment : Fragment() {
 
@@ -16,6 +19,8 @@ class NotificationsFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    private lateinit var adapter: NotificationTabLayoutAdapter
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,10 +33,25 @@ class NotificationsFragment : Fragment() {
         _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+
+        adapter= NotificationTabLayoutAdapter(this)
+        binding.notificationViewPager.adapter=adapter
+
+        TabLayoutMediator(
+            binding.tabNotification, binding.notificationViewPager
+        ) { tab: TabLayout.Tab, position: Int ->
+            tab.setText(
+                getString(notificationsViewModel.getTabTitle(position))
+            )
+        }.attach()
+
+        adapter.apply{
+            setTabs(notificationsViewModel.getTabs())
         }
+
+
+
+
         return root
     }
 
@@ -39,4 +59,5 @@ class NotificationsFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }

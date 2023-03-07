@@ -3,7 +3,6 @@ package run.acw.crew.ui.history.personal
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
@@ -12,9 +11,8 @@ import android.view.animation.LinearInterpolator
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import run.acw.crew.util.MySnackBar
+import run.acw.crew.util.OnRecordStopButtonClickedSnackBar
 import run.acw.runningcrew.R
 import run.acw.runningcrew.databinding.FragmentPersonalRunningBinding
 import java.util.concurrent.TimeUnit
@@ -91,7 +89,7 @@ class PersonalRecordFragment : Fragment() {
         }
 
         personalPrepareViewModel.message.observe(viewLifecycleOwner) { message ->
-            if(message!="")MySnackBar.make(binding.root, message).show()
+            if(message!="")OnRecordStopButtonClickedSnackBar.make(binding.root, message).show()
         }
 
 

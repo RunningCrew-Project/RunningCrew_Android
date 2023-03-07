@@ -6,12 +6,12 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import com.google.android.material.snackbar.Snackbar
 import run.acw.runningcrew.R
-import run.acw.runningcrew.databinding.StopButtonSnackBarBinding
+import run.acw.runningcrew.databinding.SnackBarStopButtonBinding
 
-class MySnackBar(view: View, private val message: String) {
+class OnRecordStopButtonClickedSnackBar(view: View, private val message: String) {
     companion object {
 
-        fun make(view: View, message: String) = MySnackBar(view, message)
+        fun make(view: View, message: String) = OnRecordStopButtonClickedSnackBar(view, message)
     }
 
     private val context = view.context
@@ -19,7 +19,7 @@ class MySnackBar(view: View, private val message: String) {
     private val snackbarLayout = snackbar.view as Snackbar.SnackbarLayout
 
     private val inflater = LayoutInflater.from(context)
-    private val snackbarBinding: StopButtonSnackBarBinding = DataBindingUtil.inflate(inflater, R.layout.stop_button_snack_bar, null, false)
+    private val snackbarBinding: SnackBarStopButtonBinding= DataBindingUtil.inflate(inflater, R.layout.snack_bar_stop_button, null, false)
 
     init {
         initView()
@@ -30,8 +30,7 @@ class MySnackBar(view: View, private val message: String) {
         with(snackbarLayout) {
             removeAllViews()
             setPadding(0, 0, 0, 0)
-           // setBackgroundColor(ContextCompat.getColor(context, R.color.white))
-            setBackgroundDrawable(ContextCompat.getDrawable(context,R.drawable.history_buttons))
+            background = ContextCompat.getDrawable(context,R.drawable.history_buttons)
             addView(snackbarBinding.root, 0)
         }
     }

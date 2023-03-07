@@ -15,9 +15,19 @@
     <color name="black">#090909</color>
     <color name="stop_button_progress_color">#1B6436</color>
 
+    <color name="notification_crew_icon_color">#707070</color>
+    <color name="notification_crew_item_under_line">#EBEBEB</color>
+    <color name="notification_my_running_background">#F3F3F3</color>
+    <color name="notification_my_running_item_background">#FBFEFB</color>
+    <color name="notification_my_running_item_running_possible">#25A855</color>
+    <color name="notification_my_running_item_running_impossible">#A12830</color>
+    <color name="notification_my_running_item_dot_line_color">#707070</color>
+    <color name="time_alert_snack_bar_background">#54090909</color>
+
 
 
     <color name="transparent">#00ffffff</color>
     <color name="tmp"> #fffbceb1</color>
+    <color name="outline">#05000029</color>
 
 </resources>

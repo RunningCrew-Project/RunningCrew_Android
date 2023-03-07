@@ -7,16 +7,45 @@
     tools:context="run.acw.crew.ui.notifications.NotificationsFragment">
 
     <TextView
-        android:id="@+id/text_notifications"
+        android:id="@+id/title_notification"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="60dp"
+        android:background="@drawable/notification_title_background"
+        android:fontFamily="@font/notosans_bold"
+        android:gravity="center"
+        android:text="@string/title_notifications"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_notification"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/notification_title_background"
+        app:tabTextAppearance="@style/NotificationTabTextStyle"
+        app:tabBackground="@drawable/notification_title_background"
+
+        app:tabIndicatorColor="@color/black"
+        app:tabTextColor="@color/black"
+
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_notification" >
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/notification_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tab_notification" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

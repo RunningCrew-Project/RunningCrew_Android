@@ -56,7 +56,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/dotted_line" />
+        android:background="@drawable/running_record_dot_line" />
 
     <LinearLayout
         android:id="@+id/personal_running_paces"
